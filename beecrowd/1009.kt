@@ -1,21 +1,20 @@
 import java.util.Scanner
-//dizendo o BEECROWD que tá errado, vou verificar depois
-fun main(args: Array<String>) {
 
-    print("")
-    val a = readLine()
+fun main(args: Array<String>) {
+    val reader = Scanner(System.`in`)
     
-	val reader = Scanner(System.`in`)
-	
-	print("")
-	var b:Double = reader.nextDouble()
-	print("")
-	var c:Double = reader.nextDouble()
-	
-	var vendas: Double = b + (c * 0.85)
-	
-	val roundoff = String.format("%.2f", vendas)
-	
-	
-	println("TOTAL = $roundoff")
+    print("")
+    val a = reader.nextLine()
+    
+    print("")
+    val b: Double = reader.nextDouble()
+    
+    print("")
+    val c: Double = reader.nextDouble()
+    
+    val vendas: Double = b + c * 0.15
+    
+    val roundoff = String.format("%.2f", vendas)
+    
+    println("TOTAL = R$ $roundoff")
 }

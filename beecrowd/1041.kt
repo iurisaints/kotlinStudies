@@ -1,0 +1,4 @@
+// SE X FOR POSITIVO E Y FOR POSITIVO Q1
+//-+ Q2
+//+- Q4
+//-- Q3

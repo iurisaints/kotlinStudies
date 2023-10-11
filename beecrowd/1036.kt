@@ -7,24 +7,20 @@ fun main(args: Array<String>) {
     var reader = Scanner(System.`in`)
     
     print("")
-    var a: Float = reader.nextFloat()
+    var a: Double = reader.nextDouble()
     print("")
-    var b: Float = reader.nextFloat()
+    var b: Double = reader.nextDouble()
     print("")
-    var c: Float = reader.nextFloat()
-	
-	var delta = (b*b)-4*a*c
+    var c: Double = reader.nextDouble()
     
-    if(delta <= 0){
+    if(a==0.0 || ((b*b)-(4*a*c))<0){
         println("Impossivel calcular")
     } else {
-        var x1 = ((-b+sqrt(delta))/(2*a))
-        var x2 = ((-b-sqrt(delta))/(2*a))
+        var x1 = (-b+sqrt((b*b)-(4*a*c)))/(2*a)
+        var x2 = (-b-sqrt((b*b)-(4*a*c)))/(2*a)
         val r1 = String.format("%.5f", x1)
         val r2 = String.format("%.5f", x2)
         println("R1 = $r1")
         println("R2 = $r2")
     }
 }
-
-//pair josé e paulo

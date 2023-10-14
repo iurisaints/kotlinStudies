@@ -13,7 +13,7 @@ fun main(args: Array<String>) {
     var finalSec = secs(b, d)
     
 
-    if(b <= d){
+    if(d <= b){
         finalHour -= 1
         println("O JOGO DUROU $finalHour HORA(S) E $finalSec MINUTO(S)")
     } else {
@@ -23,13 +23,12 @@ fun main(args: Array<String>) {
 }
 
 fun hour(a: Int, c: Int): Int{
-    if (a >= c){
-        var hour = (a - c) - 24
+    if (c > a){
+        var hour = (c - a)
         val finalHour = abs(hour)
         return finalHour
-        
-    } else if (a - c === -1){
-        val finalHour = (a - c) + 1
+    } else if (a <= c){
+        val finalHour = (a - c) + 24
         return finalHour
     } else {
         val finalHour = (c - a)

@@ -1,49 +1,34 @@
-import java.util.*
-import kotlin.math.*
+import java.util.Scanner
 
 fun main(args: Array<String>) {
-
-	var reader = Scanner(System.`in`)
-	var a: Int = reader.nextInt()
+    var reader = Scanner(System.`in`)
+    var a: Int = reader.nextInt()
     var b: Int = reader.nextInt()
     var c: Int = reader.nextInt()
-	var d: Int = reader.nextInt()
-    
-    var finalHour = hour(a, c)
-    var finalSec = secs(b, d)
-    
+    var d: Int = reader.nextInt()
 
-    if(d <= b){
-        finalHour -= 1
-        println("O JOGO DUROU $finalHour HORA(S) E $finalSec MINUTO(S)")
-    } else {
-        println("O JOGO DUROU $finalHour HORA(S) E $finalSec MINUTO(S)")
-    }
+    var timeInit = a * 60 + b
+    var timeFinal = c * 60 + d
 
+    if (timeFinal <= timeInit) {
+        println(one(timeInit, timeFinal))
+       } else {
+        println(two(timeInit, timeFinal))
+       }
 }
 
-fun hour(a: Int, c: Int): Int{
-    if (c > a){
-        var hour = (c - a)
-        val finalHour = abs(hour)
-        return finalHour
-    } else if (a <= c){
-        val finalHour = (a - c) + 24
-        return finalHour
-    } else {
-        val finalHour = (c - a)
-        return finalHour
-    }
+fun one(timeInit: Int, timeFinal: Int): String{
+    val duration = (24 * 60 - timeInit) + timeFinal
+    val finalHour = duration / 60
+    val finalMinutes = duration % 60
+    return "O JOGO DUROU $finalHour HORA(S) E $finalMinutes MINUTO(S)"
 }
 
-
-fun secs(b: Int, d: Int): Int{
-    if(d < b) {
-        var sec = (b - d) - 60
-        val finalSec = abs(sec)
-        return finalSec
-    } else {
-        val finalSec = d - b
-        return finalSec
-    }
+fun two(timeInit: Int, timeFinal: Int): String{
+    val duration = timeFinal - timeInit
+    val finalHour = duration / 60
+    val finalMinutes = duration % 60
+    return "O JOGO DUROU $finalHour HORA(S) E $finalMinutes MINUTO(S)"
 }
+
+//a mais dificil até agora

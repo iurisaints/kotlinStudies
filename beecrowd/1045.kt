@@ -10,6 +10,7 @@ fun main(args: Array<String>) {
     var b: Double
     var c: Double
 
+    // Ordenando os valores em ordem decrescente
     if (um >= dois && um >= tres) {
         a = um
         b = if (dois >= tres) dois else tres
@@ -42,8 +43,7 @@ fun main(args: Array<String>) {
         }
         if (a == b && a == c) {
             println("TRIANGULO EQUILATERO")
-        }
-        if (a == b || b == c || c == a) {
+        } else if (a == b || b == c || c == a) {
             println("TRIANGULO ISOSCELES")
         }
     }

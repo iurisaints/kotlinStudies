@@ -3,9 +3,9 @@ import java.util.*
 fun main(args: Array<String>) {
 
 	val reader = Scanner(System.`in`)
-	var valor: Float = reader.nextFloat()
-  var imposto: Double
-  var valorImposto: Double
+	var valor: Double = reader.nextDouble()
+	var imposto: Double
+	var valorImposto: Double
 	
 	if (valor <= 2000.00) {
 	    println("Isento")

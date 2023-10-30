@@ -5,13 +5,13 @@ fun main(args: Array<String>) {
 	var teste: Int = 0
     
 	for (i in 1..6) {
-	    var num: Int = reader.nextInt()
-        if (num > 0){
+	    var num: Double = reader.nextDouble()
+        if (num >= 0){
            teste += 1
         }
 	}
     
-    println("$teste")
+    println("$teste valores positivos")
 	
 }
 
